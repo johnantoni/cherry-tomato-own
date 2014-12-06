@@ -1,4 +1,4 @@
-Pomodoro = new Mongo.Collection("pomodoros");
+Pomodoros = new Mongo.Collection("Pomodoros", {});
 
 if (Meteor.isClient) {
   // counter starts at 0
@@ -16,6 +16,26 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
+
+  Template.pomodorosList.helpers({
+    allPomodoros: function () {
+      return Pomodoros.find({}, {sort: {startDate: -1}});
+    }
+  });
+
+  Template.pomodorosList.events({
+    'submit #new-pomodoro' : function (e) {
+      e.preventDefault();
+
+      var pomodoro = {
+        startDate: new Date(),
+        goal: e.target.goal.value,
+      };
+
+      Pomodoros.insert(pomodoro);
+    },
+  });
+
 }
 
 if (Meteor.isServer) {
