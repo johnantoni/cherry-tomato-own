@@ -5,9 +5,7 @@
 
 meteor-platform
 autopublish
-insecure
 sanjo:jasmine
 velocity:html-reporter
 accounts-ui
 accounts-password
-
