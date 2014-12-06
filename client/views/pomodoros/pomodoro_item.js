@@ -4,3 +4,9 @@ Template.pomodoroItem.events({
     Pomodoros.remove(this._id);
   }
 });
+
+Template.pomodoroItem.helpers({
+  timeRemaining: function() {
+    return formattedRemaining(this);
+  }
+});
