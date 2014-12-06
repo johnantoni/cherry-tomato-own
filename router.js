@@ -6,7 +6,7 @@ Router.configure({
 });
 
 Router.route('/', function () {
-  this.render('pomodorosList');
+  this.render('pomodoroList');
 }, {
-  name: 'pomodorosList'
+  name: 'pomodoroList'
 });

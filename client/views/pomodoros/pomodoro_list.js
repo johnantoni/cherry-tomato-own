@@ -1,4 +1,4 @@
-Template.pomodorosList.helpers({
+Template.pomodoroList.helpers({
   totalPomodoros: function() {
     return Pomodoros.find().fetch().length;
   },
@@ -7,7 +7,7 @@ Template.pomodorosList.helpers({
   }
 });
 
-Template.pomodorosList.events({
+Template.pomodoroList.events({
   'submit #new-pomodoro' : function (e) {
     e.preventDefault();
 
@@ -18,9 +18,5 @@ Template.pomodorosList.events({
     };
 
     Pomodoros.insert(pomodoro);
-  },
-  'click .delete' : function (e) {
-    e.preventDefault();
-    Pomodoros.remove(this._id);
   }
 });

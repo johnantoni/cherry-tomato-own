@@ -1,4 +1,4 @@
-<template name="pomodorosList">
+<template name="pomodoroList">
   <h2>Pomodoros</h2>
   <h3>Currently {{totalPomodoros}} pomodoro's.</h3>
   {{#if currentUser}}
@@ -10,10 +10,7 @@
   <ul class="pomodoro-list">
     {{#each allPomodoros}}
       <li class="pomodoro">
-        {{#if currentUser}}
-          <a class="delete" title="Delete '{{goal}}'">X</a>
-        {{/if}}
-        - {{startDate}} - {{goal}}
+        {{> pomodoroItem}}
       </li>
     {{else}}
       No completed Pomodoros yet
