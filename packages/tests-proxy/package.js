@@ -6,6 +6,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+	api.use("coffeescript", ["client", "server"]);
 	api.add_files("tests/jasmine/client/integration/collections/pomodoros_spec.js",["client"]);
 	api.add_files("tests/jasmine/client/integration/tasks/adding_pomodoro_spec.js",["client"]);
 });

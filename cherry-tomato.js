@@ -18,6 +18,9 @@ if (Meteor.isClient) {
   });
 
   Template.pomodorosList.helpers({
+    totalPomodoros: function() {
+      return Pomodoros.find().fetch().length;
+    },
     allPomodoros: function () {
       return Pomodoros.find({}, {sort: {startDate: -1}});
     }
