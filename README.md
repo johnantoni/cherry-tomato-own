@@ -29,3 +29,7 @@ generally you setup your publications to return all the data, as long as it's se
 then filter it at the ui level.
 
 lib folder is run before client & server, so can handle environment variables, etc.
+
+#### further
+
+* https://www.meteor.com/projects

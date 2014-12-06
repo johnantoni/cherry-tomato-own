@@ -1,7 +1,9 @@
-// Accounts.ui.config({
-//   passwordSignupFields: 'USERNAME_AND_EMAIL'
-// });
+// allow signup with username or email address
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_AND_EMAIL'
+});
 
+// client-side functions
 formattedRemaining = function (pomodoro) {
   if (pomodoro.done()) {
     return "0:00";
