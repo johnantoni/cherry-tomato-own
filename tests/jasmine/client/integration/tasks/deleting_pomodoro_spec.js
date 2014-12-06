@@ -1,5 +1,5 @@
 describe('Tasks', function () {
-  describe('adding a pomodoro', function () {
+  describe('deleting a pomodoro', function () {
     beforeEach(waitForRouter);
 
     beforeEach(function (done) {
@@ -38,10 +38,15 @@ describe('Tasks', function () {
       });
     });
 
-    it('adds it to the current section', function (done) {
+    it('deletes it from the current section', function (done) {
       var pomodoroList = $(".pomodoro-list").text();
       expect( pomodoroList ).toContain("A brand new task");
 
+      $(".pomodoro-list").find('input.delete').click();
+      Tracker.flush();
+
+      var updatedList = $(".pomodoro-list").text();
+      expect( updatedList ).not.toContain("A brand new task");
       done();
     });
   });
