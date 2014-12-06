@@ -12,6 +12,7 @@ Template.pomodorosList.events({
     e.preventDefault();
 
     var pomodoro = {
+      createdBy: Meteor.userId(),
       startDate: new Date(),
       goal: e.target.goal.value,
     };
