@@ -145,3 +145,10 @@ h2 a {
 a {
   cursor: pointer;
 }
+
+
+#loginWidget {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
