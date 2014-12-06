@@ -1,6 +1,8 @@
 cherry-tomato
 =============
 
+#### commands
+
 meteor bootcamp pomodoro app
 
     meteor add sanjo:jasmine
@@ -19,3 +21,11 @@ security
 console
 
     meteor mongo
+
+#### notes
+
+generally you setup your publications to return all the data, as long as it's secure.
+
+then filter it at the ui level.
+
+lib folder is run before client & server, so can handle environment variables, etc.

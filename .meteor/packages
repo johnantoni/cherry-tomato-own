@@ -8,3 +8,5 @@ sanjo:jasmine
 velocity:html-reporter
 accounts-ui
 accounts-password
+iron:router
+
