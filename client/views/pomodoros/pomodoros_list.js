@@ -3,7 +3,7 @@ Template.pomodorosList.helpers({
     return Pomodoros.find().fetch().length;
   },
   allPomodoros: function () {
-    return Pomodoros.find({createdBy: Meteor.userId()}, {sort: {startDate: -1}});
+    return Pomodoros.find({}, {sort: {startDate: -1}});
   }
 });
 
