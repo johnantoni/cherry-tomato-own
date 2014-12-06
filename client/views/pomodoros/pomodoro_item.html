@@ -1,6 +1,16 @@
 <template name="pomodoroItem">
   {{#if currentUser}}
-    <a class="delete" title="Delete '{{goal}}'">X</a>
+  <a class="delete" title="Delete '{{goal}}'">X</a> ~
   {{/if}}
-  - {{timeRemaining}} - {{goal}}
+
+  {{#if goal}}
+    {{goal}} -
+  {{/if}}
+
+  {{#if this.done}}
+    <span title="{{this}}">{{startDate.relative}}</span>
+  {{else}}
+    <span class="countdown">{{formattedRemaining}}</span> remaining
+  {{/if}}
+
 </template>

@@ -8,8 +8,12 @@ formattedRemaining = function (pomodoro) {
   if (pomodoro.done()) {
     return "0:00";
   }
-  remainingAsSeconds = (pomodoro.remaining() / 1000).floor()
+  remainingAsSeconds = (pomodoro.remaining() / 1000).floor();
   minutes = Math.floor(remainingAsSeconds / 60).toString();
   seconds = remainingAsSeconds % 60;
   return minutes.toString() + ":" + seconds.pad(2);
 };
+
+// sugar methods (to be ported to moment)
+// .toString
+// .floor

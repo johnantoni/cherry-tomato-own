@@ -6,7 +6,7 @@ Template.pomodoroItem.events({
 });
 
 Template.pomodoroItem.helpers({
-  timeRemaining: function() {
+  formattedRemaining: function() {
     return formattedRemaining(this);
   }
 });

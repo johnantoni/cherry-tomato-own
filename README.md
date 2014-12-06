@@ -8,6 +8,10 @@ meteor bootcamp pomodoro app
     meteor add sanjo:jasmine
     meteor add velocity:html-reporter
 
+run
+
+    meteor
+
 accounts
 
     meteor add accounts-ui
@@ -23,6 +27,8 @@ console
     meteor mongo
 
 #### notes
+
+offline support -> look at grounddb
 
 generally you setup your publications to return all the data, as long as it's secure.
 
