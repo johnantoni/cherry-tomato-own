@@ -39,8 +39,8 @@ describe('Tasks', function () {
     });
 
     it('adds it to the current section', function (done) {
-      var pomodoroList = $(".pomodoro-list").text();
-      expect( pomodoroList ).toContain("A brand new task");
+      var pomodorosList = $(".pomodoro-list").text();
+      expect( pomodorosList ).toContain("A brand new task");
 
       done();
     });

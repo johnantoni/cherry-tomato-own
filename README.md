@@ -36,6 +36,38 @@ then filter it at the ui level.
 
 lib folder is run before client & server, so can handle environment variables, etc.
 
+#### functions
+
+putting brackets at the end of a function causes it to be run then and there;
+
+    .....
+    }();
+
+anonymous function:
+
+    variable = function () {
+      ....
+    }
+
+...available everywhere
+
+    var variable = function () {
+      ....
+    }
+
+...available locally
+
+* see https://www.discovermeteor.com/blog/javascript-for-meteor/
+
+##### notes
+
+never need to use functions as myDate() in the template, just myDate, meteor will know.
+
+#### variables
+
+* var keyword only available inside that function
+* if without var then available globally
+
 #### further
 
 * https://www.meteor.com/projects

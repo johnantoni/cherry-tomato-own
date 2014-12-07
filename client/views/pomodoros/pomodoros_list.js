@@ -1,4 +1,4 @@
-Template.pomodoroList.helpers({
+Template.pomodorosList.helpers({
   totalPomodoros: function() {
     return Pomodoros.find({ userId: Meteor.userId() }).fetch().length;
   },
@@ -7,7 +7,7 @@ Template.pomodoroList.helpers({
   }
 });
 
-Template.pomodoroList.events({
+Template.pomodorosList.events({
   'submit #new-pomodoro' : function (e) {
     e.preventDefault();
 
