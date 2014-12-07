@@ -1,9 +1,9 @@
 Template.pomodorosList.helpers({
-  totalPomodoros: function() {
-    return Pomodoros.find({ userId: Meteor.userId() }).fetch().length;
+  currentPomodoro: function () {
+    return currentPomodoro(Meteor.user());
   },
-  allPomodoros: function () {
-    return Pomodoros.find({ userId: Meteor.userId() }, {sort: {startDate: -1}});
+  completedPomodoros: function () {
+    return completedPomodoros(Meteor.user());
   }
 });
 

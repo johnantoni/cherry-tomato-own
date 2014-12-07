@@ -26,21 +26,17 @@ describe('Tasks', function () {
     });
 
     afterEach(function (done) {
-      _.each(Pomodoros.find().fetch(), function(pomodoro) {
+      _.each(Pomodoros.find().fetch(), function (pomodoro) {
         Pomodoros.remove(pomodoro._id);
       });
-      done();
-    });
-
-    afterEach(function (done) {
       Meteor.logout( function () {
         done();
       });
     });
 
     it('adds it to the current section', function (done) {
-      var pomodorosList = $(".pomodoro-list").text();
-      expect( pomodorosList ).toContain("A brand new task");
+      var pomodoroList = $("#current-pomodoro").text();
+      expect( pomodoroList ).toContain("A brand new task");
 
       done();
     });

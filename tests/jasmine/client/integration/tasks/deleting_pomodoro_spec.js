@@ -18,8 +18,8 @@ describe('Tasks', function () {
     });
 
     beforeEach(function (done) {
-      $("input:text").val("A brand new task");
-      $("input:submit").click();
+      var start = (26).minutesBefore(new Date());
+      var id = Pomodoros.insert({userId: Meteor.userId(), goal: "A completed task", startDate: start});
 
       Tracker.flush();
       done();
@@ -38,15 +38,15 @@ describe('Tasks', function () {
       });
     });
 
-    it('deletes it from the current section', function (done) {
-      var pomodorosList = $(".pomodoro-list").text();
-      expect( pomodorosList ).toContain("A brand new task");
+    it('deletes it from the completed section', function (done) {
+      var pomodoroList = $(".pomodoro-list").text();
+      expect( pomodoroList ).toContain("A completed task");
 
       $(".pomodoro-list").find('input.delete').click();
       Tracker.flush();
 
       var updatedList = $(".pomodoro-list").text();
-      expect( updatedList ).not.toContain("A brand new task");
+      expect( updatedList ).not.toContain("A completed task");
       done();
     });
   });

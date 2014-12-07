@@ -1,19 +1,25 @@
 <template name="pomodorosList">
   <h2>Pomodoros</h2>
-  <h3>Currently {{totalPomodoros}} pomodoro's.</h3>
   {{#if currentUser}}
-    <form id="new-pomodoro">
-      <input type="text" name="goal" placeholder="Goal or name of the task"/>
-      <input type="submit" value="Start"/>
-    </form>
+  {{#if currentPomodoro}}
+  <div id="current-pomodoro">
+    {{> pomodoroItem currentPomodoro}}
+  </div>
+  {{else}}
+  <form id="new-pomodoro">
+    <input type="text" name="goal" placeholder="Goal or name of the task"/>
+    <input type="submit" value="Start"/>
+  </form>
   {{/if}}
+  {{/if}}
+
   <ul class="pomodoro-list">
-    {{#each allPomodoros}}
-      <li class="pomodoro">
-        {{> pomodoroItem}}
-      </li>
+    {{#each completedPomodoros}}
+    <li class="pomodoro">
+      {{> pomodoroItem}}
+    </li>
     {{else}}
-      No completed Pomodoros yet
+    No completed Pomodoros yet
     {{/each}}
   </ul>
 </template>

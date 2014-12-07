@@ -30,11 +30,23 @@ console
 
 offline support -> look at grounddb
 
+can use many functions of mongodb inside mini-mongo.
+
+plus mongo has native support for lat/lng for geolocation calculations.
+
 generally you setup your publications to return all the data, as long as it's secure.
 
 then filter it at the ui level.
 
 lib folder is run before client & server, so can handle environment variables, etc.
+
+functions will be filtered out of being saved to the database.
+
+
+// sugar methods (to be ported to moment)
+// .toString
+// .floor
+
 
 #### functions
 
@@ -59,8 +71,6 @@ anonymous function:
 
 * see https://www.discovermeteor.com/blog/javascript-for-meteor/
 
-##### notes
-
 never need to use functions as myDate() in the template, just myDate, meteor will know.
 
 #### variables
@@ -70,4 +80,7 @@ never need to use functions as myDate() in the template, just myDate, meteor wil
 
 #### further
 
+* http://docs.meteor.com/#/full/reactivevar
+* http://docs.meteor.com/#/full/tracker
+* ejson.js - extended json, you can also store this inside the database http://docs.meteor.com/#/full/ejson
 * https://www.meteor.com/projects
