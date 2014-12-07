@@ -12,6 +12,10 @@ run
 
     meteor
 
+reset db
+
+    meteor reset
+
 accounts
 
     meteor add accounts-ui

@@ -23,5 +23,5 @@ Meteor.startup(function () {
   Notification.requestPermission( function (status) {
     console.log("Notification status: " + status);
   });
-  Tracker.autorun(notifyIfRecentlyFinished);
+  // Tracker.autorun(notifyIfRecentlyFinished);
 });

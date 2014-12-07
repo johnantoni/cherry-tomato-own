@@ -1,0 +1,9 @@
+<template name="user">
+  <h1>Profile page for {{username}}</h1>
+  <h2>Your email is: <strong>{{email}}</strong></h2>
+  {{#if currentPomodoro}}
+  <div id="current-pomodoro">
+    {{> pomodoroItem currentPomodoro}}
+  </div>
+  {{/if}}
+</template>
