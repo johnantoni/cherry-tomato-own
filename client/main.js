@@ -2,6 +2,20 @@ Accounts.ui.config({
   passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
+title = function () {
+  // document.title = new Date();
+  // document.title = Session.get("now");
+  // console.log( formattedRemaining(currentPomodoro(Meteor.user())) )
+  if (Meteor.user()) {
+    // console.log(Meteor.user());
+    // console.log( currentPomodoro(Meteor.user()) );
+    // var userId = Meteor.user()._id;
+    // console.log(Pomodoros.findOne({userId: userId}));
+    // console.log(Pomodoros.findOne({userId: userId, startDate: {$gt: onePomodoroAgo()}}, {sort: {startDate: -1}}));
+    document.title = formattedRemaining(currentPomodoro(Meteor.user())) ;
+  }
+};
+
 var onePomodoroAgo = function () {
   return (POMODORO_LENGTH).minutesBefore(Session.get("now"));
 };
@@ -28,4 +42,8 @@ formattedRemaining = function (pomodoro) {
 
 Meteor.startup(function () {
   Meteor.setInterval(function (){Session.set("now", Date.now());}, 250);
+
+  Tracker.autorun(function() {
+    title();
+  });
 });
