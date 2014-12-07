@@ -3,15 +3,7 @@ Accounts.ui.config({
 });
 
 title = function () {
-  // document.title = new Date();
-  // document.title = Session.get("now");
-  // console.log( formattedRemaining(currentPomodoro(Meteor.user())) )
   if (Meteor.user()) {
-    // console.log(Meteor.user());
-    // console.log( currentPomodoro(Meteor.user()) );
-    // var userId = Meteor.user()._id;
-    // console.log(Pomodoros.findOne({userId: userId}));
-    // console.log(Pomodoros.findOne({userId: userId, startDate: {$gt: onePomodoroAgo()}}, {sort: {startDate: -1}}));
     document.title = formattedRemaining(currentPomodoro(Meteor.user())) ;
   }
 };
