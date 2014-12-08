@@ -1,4 +1,11 @@
 <template name="layout">
-  {{> loginButtons}}
+  <nav>
+    <a href="{{pathFor route='home'}}">Home</a>
+    |
+    <a href="{{pathFor route='findUsers'}}">Find people</a>
+    |
+    {{> loginButtons}}
+  </nav>
+
   {{> yield}}
 </template>

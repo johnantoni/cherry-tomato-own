@@ -1,0 +1,24 @@
+<template name="profileListItem">
+
+  <li>
+    {{#if followingUser}}
+      <input type="button" value="Unfollow" class="unfollow"/>
+    {{else}}
+      <input type="button" value="Follow" class="follow"/>
+    {{/if}}
+
+    <a href="{{pathFor route='profile'}}">{{username}}</a>
+
+    {{#if followerUser}}
+      {{#if currentPomodoro}}
+        {{> pomodoroItem currentPomodoro}}
+      {{else}}
+        {{username}} is slacking.
+      {{/if}}
+    {{else}}
+      {{username}} isn't sharing with you yet
+    {{/if}}
+
+  </li>
+
+</template>

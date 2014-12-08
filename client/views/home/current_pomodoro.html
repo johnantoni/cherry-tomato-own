@@ -1,0 +1,16 @@
+<template name="currentPomodoro">
+
+  <h2>Current pomodoro</h2>
+
+  {{#if currentPomodoro}}
+    <div id="current-pomodoro">
+      {{> pomodoroItem currentPomodoro}}
+    </div>
+  {{else}}
+    <form id="new-pomodoro">
+      <input type="text" name="goal" placeholder="Goal or name of the task"/>
+      <input type="submit" value="Start"/>
+    </form>
+  {{/if}}
+
+</template>

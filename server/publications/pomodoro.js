@@ -1,8 +1,19 @@
-// Publish the logged in user's posts
-Meteor.publish("pomodoros", function () {
-  return Pomodoros.find({}, {sort: {startDate: -1}});
+Meteor.publish("myPomodoros", function (){
+  return Pomodoros.find({userId: this.userId}, {sort: {startDate: -1}});
 });
 
-Meteor.publish("allUsers", function() {
-  return Meteor.users.find().fetch();
+Meteor.publish("followerPomodoros", function (followerIds) {
+  if (!this.userId) { this.ready(); return; }
+
+  // followerIds is passed in to ensure reactivity when it changes, but let's
+  // not trust it, use the user's current set instead
+  followerIds = Meteor.users.findOne({_id: this.userId}).followers || []
+
+  return Pomodoros.find(
+    {$and: [
+      {userId: {$in: followerIds}},
+      {startDate: {$gt: Date.create(POMODORO_LENGTH + ' minutes ago')}}
+    ]},
+    {sort: {startDate: -1}}
+  );
 });

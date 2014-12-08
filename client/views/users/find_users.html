@@ -1,0 +1,13 @@
+<template name="findUsers">
+  <form id="find-users">
+    <input type="text" id="username-search" name="username-search" placeholder="Username"/>
+  </form>
+
+  <ul>
+    {{#each results}}
+      <li>{{>profileListItem this}}</li>
+    {{else}}
+      No results
+    {{/each}}
+  </ul>
+</template>

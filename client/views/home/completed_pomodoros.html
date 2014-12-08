@@ -1,0 +1,14 @@
+<template name="completedPomodoros">
+  <h2>Completed pomodoros</h2>
+
+  <ul class="pomodoro-list">
+    {{#each completedPomodoros}}
+      <li class="pomodoro">
+        {{> pomodoroItem}}
+      </li>
+    {{else}}
+      No completed Pomodoros yet
+    {{/each}}
+  </ul>
+
+</template>

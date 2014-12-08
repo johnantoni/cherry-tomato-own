@@ -1,13 +1,10 @@
-Template.pomodorosList.helpers({
+Template.currentPomodoro.helpers({
   currentPomodoro: function () {
     return currentPomodoro(Meteor.user());
-  },
-  completedPomodoros: function () {
-    return completedPomodoros(Meteor.user());
   }
 });
 
-Template.pomodorosList.events({
+Template.currentPomodoro.events({
   'submit #new-pomodoro' : function (e) {
     e.preventDefault();
 

@@ -1,10 +1,10 @@
 describe('Templates', function () {
-  describe('pomodorosList', function () {
+  describe('completedPomodoros', function () {
 
     describe('when empty', function () {
       it("shows the empty message", function() {
         this.container = document.createElement("DIV");
-        this.view = Blaze.renderWithData(Template.pomodorosList, {}, this.container);
+        this.view = Blaze.renderWithData(Template.completedPomodoros, {}, this.container);
         var $view = $(this.container).find(".pomodoro-list");
 
         expect($view).toHaveText("No completed Pomodoros yet");
@@ -13,7 +13,7 @@ describe('Templates', function () {
 
     describe('when a pomodoro exists', function () {
       it("shows the pomodoro", function() {
-        spyOn(Template.pomodorosList.__helpers, " completedPomodoros").and.callFake(function () {
+        spyOn(Template.completedPomodoros.__helpers, " completedPomodoros").and.callFake(function () {
           return [{
             startDate:  new Date(),
             goal:       "new goal",
@@ -23,7 +23,7 @@ describe('Templates', function () {
         });
 
         this.container = document.createElement("DIV");
-        this.view = Blaze.renderWithData(Template.pomodorosList, {}, this.container);
+        this.view = Blaze.renderWithData(Template.completedPomodoros, {}, this.container);
         var $view = $(this.container).find(".pomodoro-list");
 
         expect($view).toContainText("new goal");

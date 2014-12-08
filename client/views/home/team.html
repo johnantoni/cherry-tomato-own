@@ -1,0 +1,13 @@
+<template name="team">
+  <h2>Team</h2>
+
+  <ul>
+    {{#each team}}
+      {{> profileListItem this}}
+    {{else}}
+      There's nobody here
+    {{/each}}
+  </ul>
+
+
+</template>

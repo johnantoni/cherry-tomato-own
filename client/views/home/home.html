@@ -1,0 +1,12 @@
+<template name="home">
+  {{#if currentUser}}
+
+    {{> currentPomodoro}}
+    {{> completedPomodoros}}
+    {{> team}}
+
+  {{else}}
+    Sign in and get to work!
+  {{/if}}
+
+</template>
